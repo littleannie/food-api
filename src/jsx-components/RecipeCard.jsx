@@ -1,10 +1,6 @@
 import React from 'react';
 
-class RecipeCard extends React.Component {
-
-  render() {
-
-    const { recipe } = this.props;
+const RecipeCard = ({ recipe }) => {
 
     return (
       <div className="recipe">
@@ -21,6 +17,5 @@ class RecipeCard extends React.Component {
       </div>
     )
   }
-}
 
 export default RecipeCard;
