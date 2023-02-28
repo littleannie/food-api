@@ -3,7 +3,10 @@
 
 
 /* Components */
+@import './components/button.css';
+@import './components/cards.css';
 @import './components/navbar.css';
+@import './components/search.css';
 
 /* Tailwind */
 @tailwind base;

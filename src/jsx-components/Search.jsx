@@ -21,24 +21,31 @@ const Search = () => {
 
     return (
       <div className="search">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          />
-        <button onClick={(e) => searchRecipes(searchValue)}>
-          Search
-        </button>
+        <div className='search-form'>
+          <input
+            className='input'
+            type="text"
+            placeholder="Search"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            />
+          <button class='primary-button' onClick={(e) => searchRecipes(searchValue)}>
+            Search
+          </button>
+        </div>
+        <div>
+        <p>{recipes.length}</p>
+        </div>
+        <div className='cards'>
+          { recipes?.length > 0
+            ? recipes.map((recipe) => (
+              <RecipeCard recipe={recipe} />
+            )) : (
+              <p>No recipes found</p>
+            )
 
-        { recipes?.length > 0
-          ? recipes.map((recipe) => (
-            <RecipeCard recipe={recipe} />
-          )) : (
-            <p>No recipes found</p>
-          )
-
-        }
+          }
+        </div>
 
       </div>
     );

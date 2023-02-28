@@ -7,7 +7,6 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Search />
-      <img src='./images/logo.png' alt='logo' />
     </div>
   );
 }

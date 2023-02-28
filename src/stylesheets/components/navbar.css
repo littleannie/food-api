@@ -1,12 +1,11 @@
 .navbar {
-  justify-content: space-between;
-  background: white;
+  background-color: #BBFEB9;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar .navbar-brand img {
-  width: 40px;
+.logo {
+  height: 80%;
 }
