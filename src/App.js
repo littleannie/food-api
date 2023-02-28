@@ -1,10 +1,11 @@
+import Navbar from './jsx-components/Navbar';
 import Search from './jsx-components/Search';
-import './stylesheets/pages/App.css';
+import './stylesheets/index.css';
 
 const App = () => {
   return (
     <div className="app">
-      <h1>React App</h1>
+      <Navbar />
       <Search />
     </div>
   );

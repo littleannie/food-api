@@ -12,7 +12,7 @@ const Search = () => {
   const searchRecipes = async (title) => {
     const response = await fetch(`${API_URL}&query=${title}`);
     const data = await response.json();
-    console.log(data.results);
+    setRecipes(data.results);
   }
 
   useEffect(() => {

@@ -5,14 +5,8 @@ const RecipeCard = ({ recipe }) => {
     return (
       <div className="recipe">
         <div>
-          <p>{recipe.Title}</p>
-        </div>
-        <div>
-          <img src={recipe.Poster !== 'N/A' ? recipe.Poster : 'https://via.placeholder.com/400'} alt={recipe.Title} />
-        </div>
-        <div>
-          <span>{recipe.Type}</span>
-          <h3>{recipe.Title}</h3>
+          <h3>{recipe.title}</h3>
+          <img src={recipe.image !== 'N/A' ? recipe.image : 'https://via.placeholder.com/400'} alt={recipe.title} />
         </div>
       </div>
     )

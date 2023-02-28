@@ -1,0 +1,11 @@
+/* Layouts */
+@import './pages/App.css';
+
+
+/* Components */
+@import './components/navbar.css';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
