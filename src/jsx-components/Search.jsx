@@ -3,16 +3,16 @@ import { useState, useEffect } from 'react';
 
 import RecipeCard from './RecipeCard';
 
-const API_URL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=9eb62f4dfb734b2eb5868ec8466b89a3"
+const API_URL = "https://api.spoonacular.com/recipes/complexSearch?apiKey=fbd1846e5ce84d15baad81209408f201"
 
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const searchRecipes = async () => {
-    const response = await fetch(`${API_URL}&query=${searchValue}`);
+  const searchRecipes = async (title) => {
+    const response = await fetch(`${API_URL}&query=${title}`);
     const data = await response.json();
-    setRecipes(data.results);
+    console.log(data.results);
   }
 
   useEffect(() => {
