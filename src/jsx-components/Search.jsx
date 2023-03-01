@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import RecipeCard from './RecipeCard';
 import RecipeDetails from './RecipeDetails';
@@ -10,6 +10,9 @@ const API_URL_2 = "https://api.spoonacular.com/recipes/random?apiKey=fbd1846e5ce
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [isShuffleClicked, setIsShuffleClicked] = useState(false);
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
+
 
   const searchRecipe = async () => {
     try {
@@ -39,6 +42,20 @@ const Search = () => {
     }
   };
 
+  const handleSearchClick = (e) => {
+    e.preventDefault();
+    setIsShuffleClicked(false);
+    setIsSearchClicked(true);
+    searchRecipes(searchValue);
+  };
+
+  const handleShuffleClick = (e) => {
+    e.preventDefault();
+    setIsSearchClicked(false);
+    setIsShuffleClicked(true);
+    searchRecipe();
+  };
+
     return (
       <div className="search">
         <div className='search-form'>
@@ -49,15 +66,19 @@ const Search = () => {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             />
-          <button className='primary-button' onClick={(e) => searchRecipes(searchValue)}>
+          <button className='primary-button'
+                  onClick={handleSearchClick}>
             Search
           </button>
-          <button className='primary-button' onClick={searchRecipe}>
+          <button className='primary-button' onClick={handleShuffleClick}>
             Shuffle
           </button>
         </div>
-          { recipes?.length === 0 ? (
-            <p>No recipes found</p>
+          { recipes?.length === 0 && (isShuffleClicked || isSearchClicked) ? (
+            <div className='no-result'>
+              <h3>Sorry, no result found...</h3>
+              <img className='no-result-img' src='../images/illustration.png' alt='logo' />
+            </div>
           ) : recipes?.length === 1 ? (
             <div className='cards'>
               {recipes.map((recipe) => <RecipeDetails recipe={recipe} />)}

@@ -30,3 +30,16 @@
 .search-form .input:focus-visible {
   outline: none;
 }
+
+.no-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-result h3 {
+  font-size: 1em;
+  padding: 1em;
+  font-weight: 800;
+}
