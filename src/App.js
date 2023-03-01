@@ -6,7 +6,12 @@ const App = () => {
   return (
     <div className="app">
       <Navbar />
-      <Search />
+      <div className='main-container'>
+        <div className='container-content'>
+          <h1 className='title'>Find your meal for tonight!</h1>
+          <Search />
+        </div>
+      </div>
     </div>
   );
 }

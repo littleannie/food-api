@@ -1,0 +1,19 @@
+.title {
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #9575b2;
+  text-align: center;
+  padding: 1em;
+}
+
+.main-container {
+  height: 90vh;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
