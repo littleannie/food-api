@@ -29,16 +29,14 @@ const Search = () => {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             />
-          <button class='primary-button' onClick={(e) => searchRecipes(searchValue)}>
+          <button className='primary-button' onClick={(e) => searchRecipes(searchValue)}>
             Search
           </button>
         </div>
-        <div>
-        <p>{recipes.length}</p>
-        </div>
         <div className='cards'>
           { recipes?.length > 0
-            ? recipes.map((recipe) => (
+            ?
+            recipes.map((recipe) => (
               <RecipeCard recipe={recipe} />
             )) : (
               <p>No recipes found</p>
