@@ -12,24 +12,24 @@ const RecipeDetails = ({ recipe }) => {
           <h3>{recipe.title}</h3>
           <div className="tags-infos">
             {recipe.vegetarian ? (
-              <div className="tag-vegetarian">
-                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+              <div className="tag">
+                <img src="../images/checkmark.png" alt='vegetarian tag'/>
                 <p>Vegetarian</p>
               </div>
             ) : (
               ""
             )}
             {recipe.veryHealthy ? (
-              <div className="tag-healthy">
-                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+              <div className="tag">
+                <img src="../images/checkmark.png" alt='tag'/>
                 <p>Healthy</p>
               </div>
             ) : (
               ""
             )}
             {recipe.sustainable ? (
-              <div className="tag-sustainable">
-                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+              <div className="tag">
+                <img src="../images/checkmark.png" alt='tag'/>
                 <p>Sustainable</p>
               </div>
             ) : (

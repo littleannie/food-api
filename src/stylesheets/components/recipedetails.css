@@ -1,0 +1,49 @@
+.card-container {
+  width: 80%;
+  padding: 1em;
+}
+
+.card-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-header h3 {
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-bottom: 0.5em;
+}
+
+.main-infos {
+  margin: 1em;
+}
+
+.tag-infos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  border-radius:6px;
+  background-color:#3eb073;
+  width:fit-content;
+  padding: 4px 9.4px;
+  color: white;
+  font-weight:600;
+  letter-spacing:1.5px;
+  margin-right: 1em;
+}
+
+.tag img {
+  height: 2em;
+  margin-right: 0.5em;
+  height: 100%;
+  width: auto;
+}
+
+.tag p {
+  font-size: 0.9em;
+}
