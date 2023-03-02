@@ -13,33 +13,34 @@ const RecipeDetails = ({ recipe }) => {
           <div className="tags-infos">
             {recipe.vegetarian ? (
               <div className="tag-vegetarian">
-                Vegetarian
+                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+                <p>Vegetarian</p>
               </div>
             ) : (
               ""
             )}
             {recipe.veryHealthy ? (
               <div className="tag-healthy">
-                Healthy
+                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+                <p>Healthy</p>
               </div>
             ) : (
               ""
             )}
             {recipe.sustainable ? (
               <div className="tag-sustainable">
-                Sustainable
+                <img src="../images/vegetarian.png" alt='vegetarian tag'/>
+                <p>Sustainable</p>
               </div>
             ) : (
               ""
             )}
-            <div className="tag-sustainable"></div>
           </div>
         </div>
       </div>
       <div className="card-footer">
-        <div className="card-description"></div>
         <div className="card-button">
-          <a className="primary-button">Search</a>
+          <a  href={recipe.sourceUrl} className="primary-button">View recipe</a>
         </div>
       </div>
     </div>

@@ -80,9 +80,7 @@ const Search = () => {
               <img className='no-result-img' src='../images/illustration.png' alt='logo' />
             </div>
           ) : recipes?.length === 1 ? (
-            <div className='cards'>
-              {recipes.map((recipe) => <RecipeDetails recipe={recipe} />)}
-            </div>
+              recipes.map((recipe) => <RecipeDetails recipe={recipe} />)
           ) : (
             <div className='cards'>
               {recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
