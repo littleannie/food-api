@@ -1,17 +1,20 @@
 import React from "react";
 
 const RecipeDetails = ({ recipe }) => {
+
+  const { image, title, veryHealthy, sustainable, sourceUrl, vegetarian} = recipe
+  
   return (
     <div className="card-container">
       <div className="card-header">
         <img
-          src={recipe.image !== "N/A" ? recipe.image : "https://via.placeholder.com/400"}
-          alt={recipe.title}
+          src={image !== "N/A" ? image : "https://via.placeholder.com/400"}
+          alt={title}
         />
         <div className="main-infos">
-          <h3>{recipe.title}</h3>
+          <h3>{title}</h3>
           <div className="tags-infos">
-            {recipe.vegetarian ? (
+            {vegetarian ? (
               <div className="tag">
                 <img src="../images/checkmark.png" alt='vegetarian tag'/>
                 <p>Vegetarian</p>
@@ -19,7 +22,7 @@ const RecipeDetails = ({ recipe }) => {
             ) : (
               ""
             )}
-            {recipe.veryHealthy ? (
+            {veryHealthy ? (
               <div className="tag">
                 <img src="../images/checkmark.png" alt='tag'/>
                 <p>Healthy</p>
@@ -27,7 +30,7 @@ const RecipeDetails = ({ recipe }) => {
             ) : (
               ""
             )}
-            {recipe.sustainable ? (
+            {sustainable ? (
               <div className="tag">
                 <img src="../images/checkmark.png" alt='tag'/>
                 <p>Sustainable</p>
@@ -40,7 +43,7 @@ const RecipeDetails = ({ recipe }) => {
       </div>
       <div className="card-footer">
         <div className="card-button">
-          <a  href={recipe.sourceUrl} className="primary-button">View recipe</a>
+          <a  href={sourceUrl} className="primary-button">View recipe</a>
         </div>
       </div>
     </div>
