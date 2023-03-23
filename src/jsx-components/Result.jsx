@@ -1,6 +1,5 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
-import RecipeDetails from './RecipeDetails';
 
 const Result = ( { recipes }) => {
   return (
