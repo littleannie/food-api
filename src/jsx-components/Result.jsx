@@ -5,10 +5,10 @@ import RecipeDetails from './RecipeDetails';
 const Result = ( { recipes }) => {
   return (
       <div>
-        { recipes.length > 0 ? 
+        { recipes.length > 0 ?
           (
           <div className="cards">
-            {recipes.map((recipe) => <RecipeDetails recipe={recipe} />)}
+            {recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
           </div>
          ) : (
         <div className='no-result'>
