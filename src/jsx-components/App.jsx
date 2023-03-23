@@ -1,6 +1,6 @@
-import Navbar from './jsx-components/Navbar';
-import Search from './jsx-components/Search';
-import './stylesheets/index.css';
+import Navbar from './Navbar';
+import Search from './Search';
+import '../stylesheets/index.css';
 
 const App = () => {
   return (
