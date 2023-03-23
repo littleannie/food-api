@@ -7,6 +7,7 @@ import Result from './Result'
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [clicked, setClicked] = useState(false)
 
   const searchRecipes = async (title) => {
     const results = await getRecipes(title);
@@ -21,6 +22,7 @@ const Search = () => {
       setRecipes([])
     }
     setSearchValue('');
+    setClicked(true)
   };
 
     return (
@@ -37,8 +39,12 @@ const Search = () => {
                   onClick={handleSearchClick}>
             Search
           </button>
+        </div>
+        {clicked && (
+        <div className='results'>
           <Result recipes={recipes} />
         </div>
+      )}
       </div>
     );
 }
