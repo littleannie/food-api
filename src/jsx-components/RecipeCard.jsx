@@ -16,6 +16,14 @@ const RecipeCard = ({ recipe }) => {
     document.body.classList.remove('active-modal')
   }
 
+  const stripHtmlTags = (htmlString) => {
+    const strippedString = htmlString.replace(/(<([^>]+)>)/gi, '');
+    return strippedString;
+  };
+
+  const strippedInstructions = stripHtmlTags(instructions);
+  const overviewInstructions = strippedInstructions.split(' ').slice(0, 20).join(' ');
+
     return (
       <div>
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -26,7 +34,7 @@ const RecipeCard = ({ recipe }) => {
                 <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{instructions}</p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{overviewInstructions}...</p>
                 <button
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   onClick={toggleModal}
@@ -44,7 +52,7 @@ const RecipeCard = ({ recipe }) => {
                 <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={image} alt={title}></img>
                 <div className="flex flex-col justify-between p-4 leading-normal">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{instructions}</p>
+                    <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">{strippedInstructions}</div>
                 </div>
                 <button className="close-modal" onClick={toggleModal}>
                   X
