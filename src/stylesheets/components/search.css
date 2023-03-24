@@ -8,13 +8,14 @@
 
 .search-form {
   background-color: white;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   height: 4em;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   border-radius: 6px;
+  margin-block: 1rem;
 }
 
 .search-form .input {
@@ -22,6 +23,7 @@
   border-left: 3px solid #FEE966;
   border-top: 3px solid #FEE966;
   border-bottom: 3px solid #FEE966;
+  border-right: none;
   border-radius: 6px 0px 0px 6px;
   height: 100%;
   padding: 1em;
@@ -42,4 +44,12 @@
   font-size: 1em;
   padding: 1em;
   font-weight: 800;
+}
+
+.results-container {
+  display: grid;
+  grid-column: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2em;
+  width: 100%;
 }

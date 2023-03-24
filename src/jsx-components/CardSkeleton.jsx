@@ -1,12 +1,22 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
-const CardSkeleton = () => {
+
+const CardSkeleton = ({cards}) => {
 
   return (
-    <div className="card-skeleton">
-
+    Array(cards).fill(0).map((_, i) =>
+    <div className="card-skeleton" key={i}>
+      <div className="top">
+        <Skeleton height={180}/>
+      </div>
+      <div className="bottom">
+        <Skeleton className="skeleton-title"/>
+        <Skeleton className="skeleton-text"/>
+      </div>
     </div>
+    )
   )
 }
 
-export default Navbar;
+export default CardSkeleton;

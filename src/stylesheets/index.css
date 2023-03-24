@@ -5,6 +5,7 @@
 /* Components */
 @import './components/button.css';
 @import './components/cards.css';
+@import './components/card-skeleton.css';
 @import './components/navbar.css';
 @import './components/search.css';
 @import './components/modal.css';
@@ -13,3 +14,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'react-loading-skeleton/dist/skeleton.css'

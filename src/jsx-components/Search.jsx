@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import getRecipes from './api';
+import CardSkeleton from './CardSkeleton';
 
-import Result from './Result'
+import RecipeCard from './RecipeCard'
 
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
@@ -44,11 +45,12 @@ const Search = () => {
             Search
           </button>
         </div>
-        {isLoading && <p>Loading</p>}
+        <div className="results-container">
+        {isLoading && <CardSkeleton cards={4}/>}
         {clicked && !isLoading && recipes.length > 0 && (
-        <div className='results'>
-          <Result recipes={recipes} />
-        </div>
+          recipes.map((recipe) =>
+            <RecipeCard recipe={recipe} key={recipe.id} />
+          )
       )}
       {clicked && !isLoading && recipes.length === 0 && (
         <div className='no-result'>
@@ -56,8 +58,8 @@ const Search = () => {
           <img className='no-result-img' src='../images/illustration.png' alt='logo' />
         </div>
       )}
-
       </div>
+    </div>
     );
 }
 
