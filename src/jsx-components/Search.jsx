@@ -7,11 +7,13 @@ import Result from './Result'
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchValue, setSearchValue] = useState('');
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
 
   const searchRecipes = async (title) => {
     const results = await getRecipes(title);
     setRecipes(results);
+    setIsloading(false);
   };
 
   const handleSearchClick = (e) => {
@@ -22,7 +24,8 @@ const Search = () => {
       setRecipes([])
     }
     setSearchValue('');
-    setClicked(true)
+    setClicked(true);
+    setIsloading(true);
   };
 
     return (
@@ -40,9 +43,16 @@ const Search = () => {
             Search
           </button>
         </div>
-        {clicked && (
+        {isLoading && <p>Loading</p>}
+        {clicked && recipes.length > 0 && (
         <div className='results'>
           <Result recipes={recipes} />
+        </div>
+      )}
+      {clicked && recipes.length === 0 && (
+        <div className='no-result'>
+          <h3>Sorry, no result found...</h3>
+          <img className='no-result-img' src='../images/illustration.png' alt='logo' />
         </div>
       )}
       </div>

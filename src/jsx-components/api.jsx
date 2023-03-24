@@ -1,4 +1,4 @@
-const API_URL_COMPLEX_SEARCH = "https://api.spoonacular.com/recipes/complexSearch?apiKey=fbd1846e5ce84d15baad81209408f201";
+const API_URL_COMPLEX_SEARCH = "https://api.spoonacular.com/recipes/complexSearch?apiKey=9eb62f4dfb734b2eb5868ec8466b89a3";
 
 const getRecipes = async (title) => {
   try {
@@ -8,7 +8,7 @@ const getRecipes = async (title) => {
     }
     const data = await response.json();
     const recipeDetailRequests = data.results.map((recipe) => {
-      const API_URL_RECIPE_DETAIL = `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=fbd1846e5ce84d15baad81209408f201`
+      const API_URL_RECIPE_DETAIL = `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=9eb62f4dfb734b2eb5868ec8466b89a3`
       return fetch(`${API_URL_RECIPE_DETAIL}`).then(response => response.json());
     });
     const recipeDetails = await Promise.all(recipeDetailRequests);
@@ -19,4 +19,3 @@ const getRecipes = async (title) => {
 }
 
 export default getRecipes;
-
