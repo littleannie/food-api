@@ -20,12 +20,13 @@ const Search = () => {
     e.preventDefault();
     if (searchValue.trim() !== '') {
       searchRecipes(searchValue);
+      setIsloading(true);
     } else {
-      setRecipes([])
+      setRecipes([]);
+      setIsloading(false);
     }
     setSearchValue('');
     setClicked(true);
-    setIsloading(true);
   };
 
     return (
@@ -44,17 +45,18 @@ const Search = () => {
           </button>
         </div>
         {isLoading && <p>Loading</p>}
-        {clicked && recipes.length > 0 && (
+        {clicked && !isLoading && recipes.length > 0 && (
         <div className='results'>
           <Result recipes={recipes} />
         </div>
       )}
-      {clicked && recipes.length === 0 && (
+      {clicked && !isLoading && recipes.length === 0 && (
         <div className='no-result'>
           <h3>Sorry, no result found...</h3>
           <img className='no-result-img' src='../images/illustration.png' alt='logo' />
         </div>
       )}
+
       </div>
     );
 }
