@@ -7,7 +7,7 @@ const Result = ( { recipes }) => {
         { recipes.length > 0 ?
           (
           <div className="cards">
-            {recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+            {recipes.map((recipe) => <RecipeCard recipe={recipe} key={recipe.id} />)}
           </div>
          ) : (
         <div className='no-result'>
