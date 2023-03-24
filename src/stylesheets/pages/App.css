@@ -10,9 +10,3 @@
 .main-container {
   padding-inline: 3rem;
 }
-
-.container-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}

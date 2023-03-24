@@ -4,7 +4,6 @@
 
 /* Components */
 @import './components/button.css';
-@import './components/cards.css';
 @import './components/card-skeleton.css';
 @import './components/navbar.css';
 @import './components/search.css';

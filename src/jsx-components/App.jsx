@@ -9,10 +9,8 @@ const App = () => {
       <Navbar />
       <SkeletonTheme baseColor= "#E8E9EB" highlightColor='#dfdddd'>
         <div className='main-container'>
-          <div className='container-content'>
-            <h1 className='title'>Find your meal for tonight!</h1>
-            <Search />
-          </div>
+          <h1 className='title'>Find your meal for tonight!</h1>
+          <Search />
         </div>
       </SkeletonTheme>
     </div>

@@ -52,6 +52,7 @@ const Search = () => {
             <RecipeCard recipe={recipe} key={recipe.id} />
           )
       )}
+        </div>
       {clicked && !isLoading && recipes.length === 0 && (
         <div className='no-result'>
           <h3>Sorry, no result found...</h3>
@@ -59,7 +60,6 @@ const Search = () => {
         </div>
       )}
       </div>
-    </div>
     );
 }
 
